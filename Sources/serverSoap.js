@@ -14,6 +14,15 @@ const service = {
                 };
             },
 
+            divar: function (args) {
+                console.log('divar called');
+                console.log(args);
+                var n = parseInt(parseInt(args.a) / parseInt(args.b));
+                return {
+                    res: n
+                };
+            },
+
             multiplicar: function (args) {
                 console.log('multiplicar called');
                 console.log(args);
