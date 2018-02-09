@@ -7,6 +7,13 @@
   <wsdl:message name="sumarResponse">
     <wsdl:part name="sumres" type="xs:integer"/>
   </wsdl:message>
+   <wsdl:message name="divarRequest">
+    <wsdl:part name="a" type="xs:integer"/>
+    <wsdl:part name="b" type="xs:integer"/>
+  </wsdl:message>
+  <wsdl:message name="divarResponse">
+    <wsdl:part name="sumres" type="xs:integer"/>
+  </wsdl:message>
   <wsdl:message name="multiplicarRequest">
     <wsdl:part name="a" type="xs:integer"/>
     <wsdl:part name="b" type="xs:integer"/>
@@ -19,6 +26,10 @@
       <wsdl:input message="sumarRequest"/>
       <wsdl:output message="sumarResponse"/>
     </wsdl:operation>
+    <wsdl:operation name="divar">
+      <wsdl:input message="divarRequest"/>
+      <wsdl:output message="divarResponse"/>
+    </wsdl:operation>
     <wsdl:operation name="multiplicar">
       <wsdl:input message="multiplicarRequest"/>
       <wsdl:output message="multiplicarResponse"/>
@@ -28,6 +39,15 @@
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="sumar">
       <soap:operation soapAction="sumar"/>
+      <wsdl:input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="divar">
+      <soap:operation soapAction="divar"/>
       <wsdl:input>
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="literal"/>
       </wsdl:input>
